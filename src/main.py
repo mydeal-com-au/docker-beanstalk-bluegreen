@@ -45,7 +45,7 @@ def main():
     boto_authenticated_client = aws_authentication.get_boto_client()
     print(f"\n Execution Type: {execution_type}\n")
 
-    if execution_type == "deploy" or execution_type == "full":
+    if execution_type == "clone" or execution_type == "full":
         print("\n\n\n ------------------ Stating Deployment Step 1 --------------------- \n")
         print("------------------ Creating Green Env --------------------- \n\n\n")
 
@@ -72,7 +72,7 @@ def main():
         print("\n\n\n ------------------ Stating Step 2 ---------------------\n")
         print("------------------ Swapping Domains --------------------- \n\n\n")
 
-    if execution_type == "swap" or execution_type == "full":
+    if execution_type == "deploy" or execution_type == "full":
         # Step 2: Swapping blue and green envs URL's.
         try:
             print("Swapping environment Domains...")
