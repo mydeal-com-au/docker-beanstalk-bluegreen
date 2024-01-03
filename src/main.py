@@ -72,6 +72,7 @@ def main():
         print("\n\n\n ------------------ Stating Step 2 ---------------------\n")
         print("------------------ Swapping Domains --------------------- \n\n\n")
 
+    if execution_type == "swap" or execution_type == "full":
         # Step 2: Swapping blue and green envs URL's.
         try:
             print("Swapping environment Domains...")
