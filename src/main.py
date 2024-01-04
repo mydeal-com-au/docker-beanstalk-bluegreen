@@ -28,14 +28,15 @@ def main():
     print(f"VERSION_LABEL = {VERSION_LABEL}\n")
     print(f"S3_ARTIFACTS_BUCKET = {S3_ARTIFACTS_BUCKET}\n")
 
-    available_execution_types = ["deploy", "cutover", "full", "rollback"]
+    available_execution_types = ["clone", "deploy", "cutover", "full", "rollback"]
     execution_type: str = str(sys.argv[1])
 
     if execution_type not in available_execution_types:
         print("Not valid execution type argument: " + execution_type)
         print(
             "Available execution types are: \n\
-            -> deploy: Create a new environment, swap URL's and deploy the new release.\n\
+            -> clone: Create a new environment\n\
+            -> deploy: Swap URL's and deploy the new release.\n\
             -> cutover: Apply health checks, reswap URL's and terminate environments.\n\
             -> full: Apply deploy and then cutover. \n\
             -> rollback: rollback tp specific application version label"
