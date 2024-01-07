@@ -73,7 +73,7 @@ def deploy_new_version(beanstalkclient, BEANSTALK_APP_NAME, BLUE_ENV_NAME, VERSI
 
 def wait_until_env_be_ready(beanstalkclient, ENV_NAME):
     env_info = get_env_info(beanstalkclient, ENV_NAME)
-    while ((env_info["Environments"][0]["Status"] != "Ready") and (env_info["Environments"][0]["Health"] != "Green") and (env_info["Environments"][0]["HealthStatus"] != "Ok")):
+    while env_info["Environments"][0]["Status"] != "Ready":
         print("Waiting the blue environment be Ready!")
         sleep(50)
         env_info = get_env_info(beanstalkclient, ENV_NAME)
